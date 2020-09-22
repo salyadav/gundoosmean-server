@@ -1,0 +1,29 @@
+{
+  "name": "gundoozmean",
+  "version": "1.0.0",
+  "description": "Server side code",
+  "main": "server.js",
+  "scripts": {
+    "nodemon": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "saloni yadav",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb-client-encryption": "^1.1.0",
+    "mongoose": "^5.10.0"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
