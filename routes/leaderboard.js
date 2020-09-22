@@ -13,9 +13,6 @@ router.route('/getAll').get((req, res) => {
         console.error('Error fetching the leaderboard statistics from the database.');
         return res.status(400).json('Error: ' + err);
     });
-    return res.json({
-        Hi: "Hellow"
-    })
 });
 
 router.route('/getTopTen').get((req, res) => {
