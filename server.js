@@ -30,7 +30,7 @@ const feedbackRouter = require(path.join(__dirname, './routes/feedback'));
 app.use(BASE_URL + 'feedback', feedbackRouter);
 app.use(BASE_URL + 'leaderboard', leaderboardRouter);
 
-app.Router().get(BASE_URL, (req, res) => res.json({
+express.Router().get(BASE_URL, (req, res) => res.json({
     test: "Test api call successful"
 }));
 
