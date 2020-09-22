@@ -1,17 +1,6 @@
--- download dependency
-npm install
+Server side code for the game-
 
---to run server
-nodemon server
+https://github.com/salyadav/gundoosmean-client
 
---initialize netlify
-
-npm i -g netlify-cli
-
-netlify.toml - netlify config file
-
--- create site id
-netlify init
-netlify deploy
-netlify dev --live -> dev server
-netlify functions:create
+Game is live!
+https://gundoosmean.netlify.app/
