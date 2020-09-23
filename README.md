@@ -1,2 +1,6 @@
-TODO: 
-1. write api to delete entry from db based on some condition - delete wrongly saved username
+Server side code for the game-
+
+https://github.com/salyadav/gundoosmean-client
+
+Game is live!
+https://gundoosmean.netlify.app/
