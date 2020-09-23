@@ -15,6 +15,19 @@ router.route('/getAll').get((req, res) => {
     });
 });
 
+router.route('/deleteUser').delete((req, res) => {
+    const username = req.query.username;
+    Leaderboard.deleteOne({ 
+        username: username
+    }).then(() => {
+        console.log('User with username: ' + username + ' deleted from the db');
+        return res.status(200).json('User deleted!');
+    }).catch(err => {
+        console.log('Error occured while deleting user.');
+        return res.status(400).json('Unable to delete user.');
+    });
+})
+
 router.route('/getTopTen').get((req, res) => {
     console.log("client made a getTopTen API request... Processing...");
     Leaderboard.find()
