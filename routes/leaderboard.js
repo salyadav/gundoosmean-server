@@ -16,9 +16,9 @@ router.route('/getAll').get((req, res) => {
 });
 
 router.route('/deleteUser').delete((req, res) => {
-    const username = req.query.username;
+    const userId = req.query.id;
     Leaderboard.deleteOne({ 
-        username: username
+        id: userId
     }).then(() => {
         console.log('User with username: ' + username + ' deleted from the db');
         return res.status(200).json('User deleted!');
