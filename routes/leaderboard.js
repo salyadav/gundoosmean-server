@@ -43,6 +43,31 @@ router.route('/getTopTen').get((req, res) => {
     });
 });
 
+router.route('/getTopTenAndUserRank').get((req, res) => {
+    console.log("client made a getTopTen API request... Processing...");
+    const username = req.query.username.toLowerCase();
+    Leaderboard.find()
+    .then(data => {
+        data.sort((a,b) =>  b.highscore - a.highscore);
+        
+        let userRank = 994570; //dummy value
+        for(let i=0; i<data.length; i++) {
+            if (data[i].username === username) {
+                userRank = i+1;
+                break;
+            }
+        }
+        return res.json({
+            userRank: userRank,
+            topTen: data.slice(0, Math.min(10, data.length))
+        }); 
+    })
+    .catch(err => {
+        console.error('Error fetching the leaderboard statistics from the database.');
+        return res.status(400).json('Error: ' + err);
+    });
+});
+
 router.route('/checkUsername').get((req, res) => {
     console.log("client made a checkUsername API request... Processing...");
 
